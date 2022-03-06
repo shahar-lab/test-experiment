@@ -24,6 +24,8 @@
 $(function() {
     $( "button" ).click(function() {
       console.log("button clicked! value is: ", $( "select" )[0].value);
+      const output = {value: $( "select" )[0].value};
+      window.parent.postMessage({ id: 'question', answer: output }, '*');
     });
 });
 </script>
